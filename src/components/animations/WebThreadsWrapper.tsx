@@ -8,9 +8,9 @@ export default function WebThreadsWrapper() {
   return (
     <div style={{ position: 'fixed', inset: 0, zIndex: 0, pointerEvents: 'none' }}>
       <WebThreads
-        color1="#FFD369"
+        color1="#5227FF"
         color2="#EAB308"
-        color3="#EEEEEE"
+        color3="#FFFFFF"
         speed={0.2}
         threadCount={6}
         frequency={5}

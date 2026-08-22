@@ -23,10 +23,12 @@ export default function Navbar() {
         left: 0,
         right: 0,
         zIndex: 50,
-        borderBottom: '1px solid var(--bg-border)',
-        background: 'rgba(10,10,10,0.85)',
-        backdropFilter: 'blur(12px)',
-        WebkitBackdropFilter: 'blur(12px)',
+        /* glass effect */
+        background: 'rgba(34,40,49,0.35)',
+        backdropFilter: 'blur(20px) saturate(180%)',
+        WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+        borderBottom: '1px solid rgba(255,255,255,0.08)',
+        boxShadow: '0 4px 32px rgba(0,0,0,0.3)',
       }}
     >
       <div
@@ -53,10 +55,11 @@ export default function Navbar() {
               justifyContent: 'center',
               fontWeight: 700,
               fontSize: '0.85rem',
-              color: '#fff',
+              color: '#222831',
               fontFamily: 'var(--font-mono)',
               letterSpacing: '-0.02em',
               flexShrink: 0,
+              boxShadow: '0 0 12px rgba(255,211,105,0.4)',
             }}
           >
             RI
@@ -78,7 +81,7 @@ export default function Navbar() {
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: 8,
+            gap: 4,
             listStyle: 'none',
           }}
           className="hidden md:flex"
@@ -88,14 +91,21 @@ export default function Navbar() {
               <a
                 href={l.href}
                 style={{
-                  padding: '6px 12px',
+                  padding: '6px 14px',
                   fontSize: '0.85rem',
-                  color: 'var(--text-secondary)',
+                  color: 'rgba(238,238,238,0.7)',
                   borderRadius: 6,
-                  transition: 'color 0.15s',
+                  transition: 'all 0.2s',
+                  display: 'block',
                 }}
-                onMouseEnter={e => (e.currentTarget.style.color = 'var(--text-primary)')}
-                onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-secondary)')}
+                onMouseEnter={e => {
+                  e.currentTarget.style.color = '#EEEEEE'
+                  e.currentTarget.style.background = 'rgba(255,255,255,0.07)'
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.color = 'rgba(238,238,238,0.7)'
+                  e.currentTarget.style.background = 'transparent'
+                }}
               >
                 {l.label}
               </a>
@@ -106,17 +116,26 @@ export default function Navbar() {
               href="#contact"
               style={{
                 marginLeft: 8,
-                padding: '8px 18px',
+                padding: '8px 20px',
                 background: 'var(--accent)',
-                color: '#fff',
+                color: '#222831',
                 borderRadius: 6,
                 fontSize: '0.85rem',
-                fontWeight: 600,
-                transition: 'background 0.15s',
+                fontWeight: 700,
+                transition: 'all 0.2s',
                 display: 'inline-block',
+                boxShadow: '0 0 16px rgba(255,211,105,0.3)',
               }}
-              onMouseEnter={e => (e.currentTarget.style.background = 'var(--accent-hover)')}
-              onMouseLeave={e => (e.currentTarget.style.background = 'var(--accent)')}
+              onMouseEnter={e => {
+                e.currentTarget.style.background = 'var(--accent-hover)'
+                e.currentTarget.style.boxShadow = '0 0 24px rgba(255,211,105,0.5)'
+                e.currentTarget.style.transform = 'translateY(-1px)'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.background = 'var(--accent)'
+                e.currentTarget.style.boxShadow = '0 0 16px rgba(255,211,105,0.3)'
+                e.currentTarget.style.transform = 'translateY(0)'
+              }}
             >
               Hire Me
             </a>
@@ -140,12 +159,14 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — glass too */}
       {open && (
         <div
           style={{
-            borderTop: '1px solid var(--bg-border)',
-            background: 'var(--bg-surface)',
+            borderTop: '1px solid rgba(255,255,255,0.08)',
+            background: 'rgba(34,40,49,0.6)',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
             padding: '12px 24px 20px',
           }}
           className="md:hidden"
@@ -157,10 +178,10 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
               style={{
                 display: 'block',
-                padding: '10px 0',
+                padding: '12px 0',
                 fontSize: '0.95rem',
-                color: 'var(--text-secondary)',
-                borderBottom: '1px solid var(--bg-border)',
+                color: 'rgba(238,238,238,0.75)',
+                borderBottom: '1px solid rgba(255,255,255,0.06)',
               }}
             >
               {l.label}
@@ -174,10 +195,10 @@ export default function Navbar() {
               marginTop: 16,
               padding: '10px 24px',
               background: 'var(--accent)',
-              color: '#fff',
+              color: '#222831',
               borderRadius: 6,
               fontSize: '0.9rem',
-              fontWeight: 600,
+              fontWeight: 700,
             }}
           >
             Hire Me
