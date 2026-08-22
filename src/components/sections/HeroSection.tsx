@@ -61,23 +61,21 @@ export default function HeroSection() {
           <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
             <div
               style={{
-                width: 72,
-                height: 72,
+                width: 80,
+                height: 80,
                 borderRadius: '50%',
                 border: '2px solid #00ADB5',
                 overflow: 'hidden',
                 flexShrink: 0,
-                background: 'rgba(0,173,181,0.1)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '1.5rem',
-                fontWeight: 700,
-                color: '#00ADB5',
-                boxShadow: '0 0 20px rgba(0,173,181,0.2)',
+                boxShadow: '0 0 24px rgba(0,173,181,0.35)',
               }}
             >
-              RI
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/profile.jpg"
+                alt="Riva Imanudin"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
             </div>
             {/* Status badge */}
             <div
