@@ -10,13 +10,22 @@ const infoCards = [
   { icon: LinkedinLogo, label: 'LinkedIn', value: profile.linkedin },
 ]
 
+const glass: React.CSSProperties = {
+  background: 'rgba(34,40,49,0.45)',
+  backdropFilter: 'blur(20px) saturate(160%)',
+  WebkitBackdropFilter: 'blur(20px) saturate(160%)',
+  border: '1px solid rgba(0,173,181,0.15)',
+  borderRadius: 12,
+  boxShadow: '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)',
+}
+
 export default function AboutSection() {
   return (
     <section
       id="about"
       style={{
         padding: '100px 0',
-        background: 'var(--bg-surface)',
+        background: 'transparent',
         position: 'relative',
         zIndex: 1,
       }}
@@ -30,6 +39,7 @@ export default function AboutSection() {
             letterSpacing: '-0.03em',
             marginTop: 16,
             marginBottom: 48,
+            color: 'var(--text-primary)',
           }}
         >
           Who I Am
@@ -39,13 +49,13 @@ export default function AboutSection() {
           style={{
             display: 'grid',
             gridTemplateColumns: '1.2fr 1fr',
-            gap: 64,
+            gap: 40,
             alignItems: 'start',
           }}
           className="about-grid"
         >
           {/* Left — bio */}
-          <div>
+          <div style={{ ...glass, padding: '36px 32px' }}>
             <p
               style={{
                 fontSize: '1rem',
@@ -78,9 +88,9 @@ export default function AboutSection() {
                 lineHeight: 1.8,
               }}
             >
-              I hold Fortinet NSE and Honeywell technical accreditations, and I actively expand my security knowledge
-              through Hack The Box Academy. I care about clean documentation and making complex technology
-              approachable for end-users.
+              I hold Fortinet NSE 1 &amp; 2 certifications and a Zebra Technologies Field Engineer certification. I work
+              across Cisco, Fortinet, and Zebra ecosystems and am comfortable at both the hardware layer and the
+              application integration layer.
             </p>
           </div>
 
@@ -90,23 +100,28 @@ export default function AboutSection() {
               <div
                 key={label}
                 style={{
+                  ...glass,
+                  padding: '16px 20px',
                   display: 'flex',
                   alignItems: 'center',
                   gap: 16,
-                  padding: '16px 20px',
-                  background: 'var(--bg-elevated)',
-                  border: '1px solid var(--bg-border)',
-                  borderRadius: 8,
-                  transition: 'border-color 0.15s',
+                  transition: 'border-color 0.2s, background 0.2s',
                 }}
-                onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(255,211,105,0.3)')}
-                onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--bg-border)')}
+                onMouseEnter={e => {
+                  e.currentTarget.style.borderColor = 'rgba(0,173,181,0.35)'
+                  e.currentTarget.style.background = 'rgba(34,40,49,0.6)'
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.borderColor = 'rgba(0,173,181,0.15)'
+                  e.currentTarget.style.background = 'rgba(34,40,49,0.45)'
+                }}
               >
                 <div
                   style={{
                     width: 36,
                     height: 36,
-                    background: 'var(--accent-glow)',
+                    background: 'rgba(0,173,181,0.12)',
+                    border: '1px solid rgba(0,173,181,0.2)',
                     borderRadius: 8,
                     display: 'flex',
                     alignItems: 'center',
@@ -114,11 +129,17 @@ export default function AboutSection() {
                     flexShrink: 0,
                   }}
                 >
-                  <Icon size={18} style={{ color: 'var(--accent)' }} weight="fill" />
+                  <Icon size={18} style={{ color: '#00ADB5' }} weight="fill" />
                 </div>
                 <div>
                   <div
-                    style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 2 }}
+                    style={{
+                      fontSize: '0.7rem',
+                      color: 'var(--text-muted)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.1em',
+                      marginBottom: 2,
+                    }}
                   >
                     {label}
                   </div>
@@ -134,7 +155,7 @@ export default function AboutSection() {
         @media (max-width: 768px) {
           .about-grid {
             grid-template-columns: 1fr !important;
-            gap: 40px !important;
+            gap: 24px !important;
           }
         }
       `}</style>

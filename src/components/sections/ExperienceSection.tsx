@@ -2,13 +2,22 @@
 import SectionLabel from '@/components/ui/SectionLabel'
 import { experiences } from '@/lib/data'
 
+const glass: React.CSSProperties = {
+  background: 'rgba(34,40,49,0.45)',
+  backdropFilter: 'blur(20px) saturate(160%)',
+  WebkitBackdropFilter: 'blur(20px) saturate(160%)',
+  border: '1px solid rgba(0,173,181,0.15)',
+  borderRadius: 12,
+  boxShadow: '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)',
+}
+
 export default function ExperienceSection() {
   return (
     <section
       id="experience"
       style={{
         padding: '100px 0',
-        background: 'var(--bg-surface)',
+        background: 'transparent',
         position: 'relative',
         zIndex: 1,
       }}
@@ -22,6 +31,7 @@ export default function ExperienceSection() {
             letterSpacing: '-0.03em',
             marginTop: 16,
             marginBottom: 56,
+            color: 'var(--text-primary)',
           }}
         >
           Experience
@@ -37,7 +47,7 @@ export default function ExperienceSection() {
               top: 8,
               bottom: 0,
               width: 1,
-              background: 'linear-gradient(to bottom, var(--accent) 0%, rgba(255,211,105,0.1) 100%)',
+              background: 'linear-gradient(to bottom, #00ADB5 0%, rgba(0,173,181,0.05) 100%)',
             }}
           />
 
@@ -58,23 +68,28 @@ export default function ExperienceSection() {
                   width: 15,
                   height: 15,
                   borderRadius: '50%',
-                  background: idx === 0 ? 'var(--accent)' : 'var(--bg-elevated)',
-                  border: `2px solid ${idx === 0 ? 'var(--accent)' : 'var(--bg-border)'}`,
-                  boxShadow: idx === 0 ? '0 0 10px rgba(255,211,105,0.4)' : 'none',
+                  background: idx === 0 ? '#00ADB5' : 'var(--bg-elevated)',
+                  border: `2px solid ${idx === 0 ? '#00ADB5' : 'rgba(0,173,181,0.2)'}`,
+                  boxShadow: idx === 0 ? '0 0 10px rgba(0,173,181,0.5)' : 'none',
+                  zIndex: 1,
                 }}
               />
 
               {/* Card */}
               <div
                 style={{
-                  background: 'var(--bg-elevated)',
-                  border: '1px solid var(--bg-border)',
-                  borderRadius: 8,
+                  ...glass,
                   padding: '24px 28px',
-                  transition: 'border-color 0.15s',
+                  transition: 'border-color 0.15s, box-shadow 0.15s',
                 }}
-                onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(255,211,105,0.25)')}
-                onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--bg-border)')}
+                onMouseEnter={e => {
+                  e.currentTarget.style.borderColor = 'rgba(0,173,181,0.35)'
+                  e.currentTarget.style.boxShadow = '0 0 24px rgba(0,173,181,0.08), 0 8px 32px rgba(0,0,0,0.3)'
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.borderColor = 'rgba(0,173,181,0.15)'
+                  e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)'
+                }}
               >
                 {/* Header row */}
                 <div
@@ -84,38 +99,40 @@ export default function ExperienceSection() {
                     alignItems: 'flex-start',
                     flexWrap: 'wrap',
                     gap: 12,
-                    marginBottom: 16,
+                    marginBottom: 8,
                   }}
                 >
                   <div>
                     <h3
                       style={{
-                        fontSize: '1.05rem',
-                        fontWeight: 600,
+                        fontSize: '1rem',
+                        fontWeight: 700,
                         color: 'var(--text-primary)',
+                        letterSpacing: '-0.02em',
                         marginBottom: 4,
                       }}
                     >
                       {exp.title}
                     </h3>
-                    <p
+                    <div
                       style={{
                         fontSize: '0.85rem',
-                        color: 'var(--accent)',
-                        fontWeight: 500,
+                        color: '#00ADB5',
+                        fontWeight: 600,
                       }}
                     >
                       {exp.company}
-                    </p>
+                    </div>
                   </div>
+                  {/* Date badge */}
                   <span
                     style={{
                       padding: '4px 12px',
-                      background: 'rgba(255,211,105,0.08)',
-                      border: '1px solid rgba(255,211,105,0.15)',
-                      borderRadius: 6,
+                      background: 'rgba(0,173,181,0.1)',
+                      border: '1px solid rgba(0,173,181,0.2)',
+                      borderRadius: 20,
                       fontSize: '0.75rem',
-                      color: 'var(--accent)',
+                      color: '#00ADB5',
                       fontFamily: 'var(--font-mono)',
                       fontWeight: 500,
                       whiteSpace: 'nowrap',
@@ -126,7 +143,7 @@ export default function ExperienceSection() {
                 </div>
 
                 {/* Bullet points */}
-                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8 }}>
+                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8, marginTop: 16 }}>
                   {exp.points.map((pt, i) => (
                     <li
                       key={i}
@@ -144,7 +161,7 @@ export default function ExperienceSection() {
                           width: 4,
                           height: 4,
                           borderRadius: '50%',
-                          background: 'var(--accent)',
+                          background: '#00ADB5',
                           flexShrink: 0,
                           opacity: 0.6,
                         }}
@@ -158,6 +175,14 @@ export default function ExperienceSection() {
           ))}
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          #experience .timeline-card {
+            padding: 20px 16px !important;
+          }
+        }
+      `}</style>
     </section>
   )
 }

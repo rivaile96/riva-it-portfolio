@@ -11,6 +11,15 @@ const contactItems = [
   { icon: GithubLogo, label: 'GitHub', value: profile.github, href: `https://${profile.github}` },
 ]
 
+const glass: React.CSSProperties = {
+  background: 'rgba(34,40,49,0.45)',
+  backdropFilter: 'blur(20px) saturate(160%)',
+  WebkitBackdropFilter: 'blur(20px) saturate(160%)',
+  border: '1px solid rgba(0,173,181,0.15)',
+  borderRadius: 12,
+  boxShadow: '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)',
+}
+
 export default function ContactSection() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [sent, setSent] = useState(false)
@@ -31,7 +40,7 @@ export default function ContactSection() {
       id="contact"
       style={{
         padding: '100px 0',
-        background: 'var(--bg-surface)',
+        background: 'transparent',
         position: 'relative',
         zIndex: 1,
       }}
@@ -45,6 +54,7 @@ export default function ContactSection() {
             letterSpacing: '-0.03em',
             marginTop: 16,
             marginBottom: 48,
+            color: 'var(--text-primary)',
           }}
         >
           Contact
@@ -54,25 +64,25 @@ export default function ContactSection() {
           style={{
             display: 'grid',
             gridTemplateColumns: '1fr 1.3fr',
-            gap: 64,
+            gap: 40,
             alignItems: 'start',
           }}
           className="contact-grid"
         >
           {/* Left — contact info */}
-          <div>
+          <div style={{ ...glass, padding: '32px 28px' }}>
             <p
               style={{
                 fontSize: '0.95rem',
                 color: 'var(--text-secondary)',
                 lineHeight: 1.7,
-                marginBottom: 32,
+                marginBottom: 28,
               }}
             >
               I&apos;m open to IT Field Engineer roles, RFID/Auto-ID system integration projects, and consulting
               engagements. Reach out through any channel below.
             </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               {contactItems.map(({ icon: Icon, label, value, href }) => (
                 <a
                   key={label}
@@ -83,41 +93,52 @@ export default function ContactSection() {
                     display: 'flex',
                     alignItems: 'center',
                     gap: 14,
-                    padding: '14px 18px',
-                    background: 'var(--bg-elevated)',
-                    border: '1px solid var(--bg-border)',
+                    padding: '12px 16px',
+                    background: 'rgba(0,173,181,0.04)',
+                    border: '1px solid rgba(0,173,181,0.12)',
                     borderRadius: 8,
                     transition: 'border-color 0.15s, background 0.15s',
                     textDecoration: 'none',
                   }}
                   onMouseEnter={e => {
-                    e.currentTarget.style.borderColor = 'rgba(255,211,105,0.35)'
-                    e.currentTarget.style.background = 'rgba(255,211,105,0.04)'
+                    e.currentTarget.style.borderColor = 'rgba(0,173,181,0.35)'
+                    e.currentTarget.style.background = 'rgba(0,173,181,0.08)'
                   }}
                   onMouseLeave={e => {
-                    e.currentTarget.style.borderColor = 'var(--bg-border)'
-                    e.currentTarget.style.background = 'var(--bg-elevated)'
+                    e.currentTarget.style.borderColor = 'rgba(0,173,181,0.12)'
+                    e.currentTarget.style.background = 'rgba(0,173,181,0.04)'
                   }}
                 >
                   <div
                     style={{
-                      width: 34,
-                      height: 34,
+                      width: 36,
+                      height: 36,
                       borderRadius: 8,
-                      background: 'var(--accent-glow)',
+                      background: 'rgba(0,173,181,0.1)',
+                      border: '1px solid rgba(0,173,181,0.2)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       flexShrink: 0,
                     }}
                   >
-                    <Icon size={16} style={{ color: 'var(--accent)' }} weight="fill" />
+                    <Icon size={17} style={{ color: '#00ADB5' }} weight="fill" />
                   </div>
                   <div>
-                    <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 2 }}>
+                    <div
+                      style={{
+                        fontSize: '0.68rem',
+                        color: 'var(--text-muted)',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.1em',
+                        marginBottom: 1,
+                      }}
+                    >
                       {label}
                     </div>
-                    <div style={{ fontSize: '0.84rem', color: 'var(--text-primary)', fontWeight: 500 }}>{value}</div>
+                    <div style={{ fontSize: '0.83rem', color: 'var(--text-primary)', fontWeight: 500 }}>
+                      {value}
+                    </div>
                   </div>
                 </a>
               ))}
@@ -125,11 +146,21 @@ export default function ContactSection() {
           </div>
 
           {/* Right — form */}
-          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-            <div>
+          <form
+            onSubmit={handleSubmit}
+            style={{
+              ...glass,
+              padding: '32px 28px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 16,
+            }}
+          >
+            {/* Name */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
               <label
                 htmlFor="name"
-                style={{ display: 'block', fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: 8, letterSpacing: '0.08em', textTransform: 'uppercase' }}
+                style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: 500 }}
               >
                 Name
               </label>
@@ -142,24 +173,26 @@ export default function ContactSection() {
                 onChange={handleChange}
                 placeholder="Your name"
                 style={{
-                  width: '100%',
-                  padding: '12px 16px',
-                  background: 'var(--bg-elevated)',
-                  border: '1px solid var(--bg-border)',
+                  padding: '10px 14px',
+                  background: 'rgba(34,40,49,0.6)',
+                  border: '1px solid rgba(0,173,181,0.2)',
                   borderRadius: 8,
                   color: 'var(--text-primary)',
                   fontSize: '0.9rem',
                   outline: 'none',
                   transition: 'border-color 0.15s',
+                  width: '100%',
                 }}
-                onFocus={e => (e.target.style.borderColor = 'var(--accent)')}
-                onBlur={e => (e.target.style.borderColor = 'var(--bg-border)')}
+                onFocus={e => (e.target.style.borderColor = '#00ADB5')}
+                onBlur={e => (e.target.style.borderColor = 'rgba(0,173,181,0.2)')}
               />
             </div>
-            <div>
+
+            {/* Email */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
               <label
                 htmlFor="email"
-                style={{ display: 'block', fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: 8, letterSpacing: '0.08em', textTransform: 'uppercase' }}
+                style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: 500 }}
               >
                 Email
               </label>
@@ -172,24 +205,26 @@ export default function ContactSection() {
                 onChange={handleChange}
                 placeholder="your@email.com"
                 style={{
-                  width: '100%',
-                  padding: '12px 16px',
-                  background: 'var(--bg-elevated)',
-                  border: '1px solid var(--bg-border)',
+                  padding: '10px 14px',
+                  background: 'rgba(34,40,49,0.6)',
+                  border: '1px solid rgba(0,173,181,0.2)',
                   borderRadius: 8,
                   color: 'var(--text-primary)',
                   fontSize: '0.9rem',
                   outline: 'none',
                   transition: 'border-color 0.15s',
+                  width: '100%',
                 }}
-                onFocus={e => (e.target.style.borderColor = 'var(--accent)')}
-                onBlur={e => (e.target.style.borderColor = 'var(--bg-border)')}
+                onFocus={e => (e.target.style.borderColor = '#00ADB5')}
+                onBlur={e => (e.target.style.borderColor = 'rgba(0,173,181,0.2)')}
               />
             </div>
-            <div>
+
+            {/* Message */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
               <label
                 htmlFor="message"
-                style={{ display: 'block', fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: 8, letterSpacing: '0.08em', textTransform: 'uppercase' }}
+                style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: 500 }}
               >
                 Message
               </label>
@@ -200,50 +235,53 @@ export default function ContactSection() {
                 rows={5}
                 value={form.message}
                 onChange={handleChange}
-                placeholder="Tell me about your project..."
+                placeholder="What are you working on?"
                 style={{
-                  width: '100%',
-                  padding: '12px 16px',
-                  background: 'var(--bg-elevated)',
-                  border: '1px solid var(--bg-border)',
+                  padding: '10px 14px',
+                  background: 'rgba(34,40,49,0.6)',
+                  border: '1px solid rgba(0,173,181,0.2)',
                   borderRadius: 8,
                   color: 'var(--text-primary)',
                   fontSize: '0.9rem',
                   outline: 'none',
                   resize: 'vertical',
                   transition: 'border-color 0.15s',
-                  fontFamily: 'var(--font-display)',
+                  width: '100%',
+                  fontFamily: 'inherit',
                 }}
-                onFocus={e => (e.target.style.borderColor = 'var(--accent)')}
-                onBlur={e => (e.target.style.borderColor = 'var(--bg-border)')}
+                onFocus={e => (e.target.style.borderColor = '#00ADB5')}
+                onBlur={e => (e.target.style.borderColor = 'rgba(0,173,181,0.2)')}
               />
             </div>
+
+            {/* Submit */}
             <button
               type="submit"
+              disabled={sent}
               style={{
-                display: 'flex',
+                display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: 8,
-                padding: '13px 24px',
-                background: sent ? 'rgba(34,197,94,0.2)' : 'var(--accent)',
-                color: sent ? 'var(--signal-green)' : '#fff',
-                border: sent ? '1px solid rgba(34,197,94,0.3)' : 'none',
+                padding: '12px 24px',
+                background: sent ? 'rgba(0,173,181,0.4)' : '#00ADB5',
+                color: '#222831',
                 borderRadius: 8,
-                fontWeight: 600,
+                border: 'none',
+                fontWeight: 700,
                 fontSize: '0.9rem',
-                cursor: 'pointer',
+                cursor: sent ? 'default' : 'pointer',
                 transition: 'background 0.15s, box-shadow 0.15s',
               }}
               onMouseEnter={e => {
                 if (!sent) {
-                  e.currentTarget.style.background = 'var(--accent-hover)'
-                  e.currentTarget.style.boxShadow = '0 0 20px rgba(255,211,105,0.3)'
+                  e.currentTarget.style.background = '#00c5ce'
+                  e.currentTarget.style.boxShadow = '0 0 20px rgba(0,173,181,0.4)'
                 }
               }}
               onMouseLeave={e => {
                 if (!sent) {
-                  e.currentTarget.style.background = 'var(--accent)'
+                  e.currentTarget.style.background = '#00ADB5'
                   e.currentTarget.style.boxShadow = 'none'
                 }
               }}
@@ -258,7 +296,7 @@ export default function ContactSection() {
         @media (max-width: 768px) {
           .contact-grid {
             grid-template-columns: 1fr !important;
-            gap: 40px !important;
+            gap: 24px !important;
           }
         }
         input::placeholder, textarea::placeholder {

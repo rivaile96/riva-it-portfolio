@@ -2,13 +2,22 @@
 import SectionLabel from '@/components/ui/SectionLabel'
 import { projects } from '@/lib/data'
 
+const glass: React.CSSProperties = {
+  background: 'rgba(34,40,49,0.45)',
+  backdropFilter: 'blur(20px) saturate(160%)',
+  WebkitBackdropFilter: 'blur(20px) saturate(160%)',
+  border: '1px solid rgba(0,173,181,0.15)',
+  borderRadius: 12,
+  boxShadow: '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)',
+}
+
 export default function ProjectsSection() {
   return (
     <section
       id="projects"
       style={{
         padding: '100px 0',
-        background: 'var(--bg-void)',
+        background: 'transparent',
         position: 'relative',
         zIndex: 1,
       }}
@@ -22,6 +31,7 @@ export default function ProjectsSection() {
             letterSpacing: '-0.03em',
             marginTop: 16,
             marginBottom: 48,
+            color: 'var(--text-primary)',
           }}
         >
           Projects
@@ -39,9 +49,7 @@ export default function ProjectsSection() {
             <div
               key={project.name}
               style={{
-                background: 'var(--bg-surface)',
-                border: '1px solid var(--bg-border)',
-                borderRadius: 8,
+                ...glass,
                 padding: '28px',
                 display: 'flex',
                 flexDirection: 'column',
@@ -50,13 +58,13 @@ export default function ProjectsSection() {
                 cursor: 'default',
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.borderColor = 'rgba(255,211,105,0.4)'
-                e.currentTarget.style.boxShadow = '0 0 32px rgba(255,211,105,0.1)'
+                e.currentTarget.style.borderColor = 'rgba(0,173,181,0.4)'
+                e.currentTarget.style.boxShadow = '0 0 32px rgba(0,173,181,0.1), 0 8px 32px rgba(0,0,0,0.3)'
                 e.currentTarget.style.transform = 'translateY(-2px)'
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.borderColor = 'var(--bg-border)'
-                e.currentTarget.style.boxShadow = 'none'
+                e.currentTarget.style.borderColor = 'rgba(0,173,181,0.15)'
+                e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)'
                 e.currentTarget.style.transform = 'translateY(0)'
               }}
             >
@@ -66,7 +74,7 @@ export default function ProjectsSection() {
                   style={{
                     fontFamily: 'var(--font-mono)',
                     fontSize: '0.7rem',
-                    color: 'var(--accent)',
+                    color: '#00ADB5',
                     opacity: 0.6,
                     marginBottom: 8,
                     letterSpacing: '0.1em',
@@ -76,7 +84,7 @@ export default function ProjectsSection() {
                 </div>
                 <h3
                   style={{
-                    fontSize: '1.15rem',
+                    fontSize: '1.1rem',
                     fontWeight: 700,
                     color: 'var(--text-primary)',
                     letterSpacing: '-0.02em',
@@ -89,35 +97,14 @@ export default function ProjectsSection() {
               {/* Description */}
               <p
                 style={{
-                  fontSize: '0.84rem',
+                  fontSize: '0.85rem',
                   color: 'var(--text-secondary)',
-                  lineHeight: 1.7,
+                  lineHeight: 1.65,
                   flexGrow: 1,
                 }}
               >
                 {project.desc}
               </p>
-
-              {/* Highlight */}
-              <div
-                style={{
-                  padding: '12px 14px',
-                  background: 'rgba(255,211,105,0.06)',
-                  borderLeft: '2px solid var(--accent)',
-                  borderRadius: '0 6px 6px 0',
-                }}
-              >
-                <p
-                  style={{
-                    fontSize: '0.78rem',
-                    color: 'var(--text-secondary)',
-                    fontStyle: 'italic',
-                    lineHeight: 1.5,
-                  }}
-                >
-                  {project.highlight}
-                </p>
-              </div>
 
               {/* Tech tags */}
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
@@ -126,12 +113,21 @@ export default function ProjectsSection() {
                     key={t}
                     style={{
                       padding: '3px 10px',
-                      background: 'var(--bg-elevated)',
-                      border: '1px solid var(--bg-border)',
+                      background: 'rgba(0,173,181,0.06)',
+                      border: '1px solid rgba(0,173,181,0.18)',
                       borderRadius: 20,
                       fontSize: '0.7rem',
-                      color: 'var(--text-muted)',
+                      color: 'rgba(0,173,181,0.85)',
                       fontFamily: 'var(--font-mono)',
+                      transition: 'border-color 0.15s, color 0.15s',
+                    }}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.borderColor = 'rgba(0,173,181,0.5)'
+                      e.currentTarget.style.color = '#00ADB5'
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.borderColor = 'rgba(0,173,181,0.18)'
+                      e.currentTarget.style.color = 'rgba(0,173,181,0.85)'
                     }}
                   >
                     {t}
@@ -144,7 +140,7 @@ export default function ProjectsSection() {
       </div>
 
       <style>{`
-        @media (max-width: 900px) {
+        @media (max-width: 768px) {
           .projects-grid {
             grid-template-columns: 1fr !important;
           }

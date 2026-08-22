@@ -2,13 +2,22 @@
 import SectionLabel from '@/components/ui/SectionLabel'
 import { skills } from '@/lib/data'
 
+const glass: React.CSSProperties = {
+  background: 'rgba(34,40,49,0.45)',
+  backdropFilter: 'blur(20px) saturate(160%)',
+  WebkitBackdropFilter: 'blur(20px) saturate(160%)',
+  border: '1px solid rgba(0,173,181,0.15)',
+  borderRadius: 12,
+  boxShadow: '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)',
+}
+
 export default function SkillsSection() {
   return (
     <section
       id="skills"
       style={{
         padding: '100px 0',
-        background: 'var(--bg-void)',
+        background: 'transparent',
         position: 'relative',
         zIndex: 1,
       }}
@@ -22,6 +31,7 @@ export default function SkillsSection() {
             letterSpacing: '-0.03em',
             marginTop: 16,
             marginBottom: 48,
+            color: 'var(--text-primary)',
           }}
         >
           What I Work With
@@ -39,19 +49,17 @@ export default function SkillsSection() {
             <div
               key={group.category}
               style={{
-                background: 'var(--bg-surface)',
-                border: '1px solid var(--bg-border)',
-                borderRadius: 8,
+                ...glass,
                 padding: '28px 28px 24px',
                 transition: 'border-color 0.2s, box-shadow 0.2s',
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.borderColor = 'rgba(255,211,105,0.3)'
-                e.currentTarget.style.boxShadow = '0 0 24px rgba(255,211,105,0.06)'
+                e.currentTarget.style.borderColor = 'rgba(0,173,181,0.35)'
+                e.currentTarget.style.boxShadow = '0 0 28px rgba(0,173,181,0.08), 0 8px 32px rgba(0,0,0,0.3)'
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.borderColor = 'var(--bg-border)'
-                e.currentTarget.style.boxShadow = 'none'
+                e.currentTarget.style.borderColor = 'rgba(0,173,181,0.15)'
+                e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)'
               }}
             >
               {/* Category header */}
@@ -61,14 +69,14 @@ export default function SkillsSection() {
                     width: 32,
                     height: 32,
                     borderRadius: 6,
-                    background: 'var(--accent-glow)',
-                    border: '1px solid rgba(255,211,105,0.2)',
+                    background: 'rgba(0,173,181,0.12)',
+                    border: '1px solid rgba(0,173,181,0.25)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     fontFamily: 'var(--font-mono)',
                     fontSize: '0.7rem',
-                    color: 'var(--accent)',
+                    color: '#00ADB5',
                     fontWeight: 700,
                     flexShrink: 0,
                   }}
@@ -87,7 +95,7 @@ export default function SkillsSection() {
                 </h3>
               </div>
 
-              {/* Items list */}
+              {/* Skill list */}
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10 }}>
                 {group.items.map(item => (
                   <li
@@ -105,7 +113,7 @@ export default function SkillsSection() {
                         width: 5,
                         height: 5,
                         borderRadius: '50%',
-                        background: 'var(--accent)',
+                        background: '#00ADB5',
                         flexShrink: 0,
                         opacity: 0.8,
                       }}
@@ -120,7 +128,7 @@ export default function SkillsSection() {
       </div>
 
       <style>{`
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
           .skills-grid {
             grid-template-columns: 1fr !important;
           }

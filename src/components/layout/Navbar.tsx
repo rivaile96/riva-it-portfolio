@@ -23,11 +23,10 @@ export default function Navbar() {
         left: 0,
         right: 0,
         zIndex: 50,
-        /* glass effect */
-        background: 'rgba(34,40,49,0.35)',
+        background: 'rgba(34,40,49,0.4)',
         backdropFilter: 'blur(20px) saturate(180%)',
         WebkitBackdropFilter: 'blur(20px) saturate(180%)',
-        borderBottom: '1px solid rgba(255,255,255,0.08)',
+        borderBottom: '1px solid rgba(0,173,181,0.15)',
         boxShadow: '0 4px 32px rgba(0,0,0,0.3)',
       }}
     >
@@ -48,7 +47,7 @@ export default function Navbar() {
             style={{
               width: 36,
               height: 36,
-              background: 'var(--accent)',
+              background: '#00ADB5',
               borderRadius: 6,
               display: 'flex',
               alignItems: 'center',
@@ -59,7 +58,7 @@ export default function Navbar() {
               fontFamily: 'var(--font-mono)',
               letterSpacing: '-0.02em',
               flexShrink: 0,
-              boxShadow: '0 0 12px rgba(255,211,105,0.4)',
+              boxShadow: '0 0 12px rgba(0,173,181,0.4)',
             }}
           >
             RI
@@ -100,7 +99,7 @@ export default function Navbar() {
                 }}
                 onMouseEnter={e => {
                   e.currentTarget.style.color = '#EEEEEE'
-                  e.currentTarget.style.background = 'rgba(255,255,255,0.07)'
+                  e.currentTarget.style.background = 'rgba(0,173,181,0.08)'
                 }}
                 onMouseLeave={e => {
                   e.currentTarget.style.color = 'rgba(238,238,238,0.7)'
@@ -111,62 +110,59 @@ export default function Navbar() {
               </a>
             </li>
           ))}
-          <li>
-            <a
-              href="#contact"
-              style={{
-                marginLeft: 8,
-                padding: '8px 20px',
-                background: 'var(--accent)',
-                color: '#222831',
-                borderRadius: 6,
-                fontSize: '0.85rem',
-                fontWeight: 700,
-                transition: 'all 0.2s',
-                display: 'inline-block',
-                boxShadow: '0 0 16px rgba(255,211,105,0.3)',
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.background = 'var(--accent-hover)'
-                e.currentTarget.style.boxShadow = '0 0 24px rgba(255,211,105,0.5)'
-                e.currentTarget.style.transform = 'translateY(-1px)'
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.background = 'var(--accent)'
-                e.currentTarget.style.boxShadow = '0 0 16px rgba(255,211,105,0.3)'
-                e.currentTarget.style.transform = 'translateY(0)'
-              }}
-            >
-              Hire Me
-            </a>
-          </li>
         </ul>
+
+        {/* Desktop CTA */}
+        <a
+          href="#contact"
+          style={{
+            display: 'none',
+            padding: '8px 20px',
+            background: '#00ADB5',
+            color: '#222831',
+            borderRadius: 6,
+            fontSize: '0.85rem',
+            fontWeight: 700,
+            transition: 'background 0.2s, box-shadow 0.2s',
+          }}
+          className="hidden md:block"
+          onMouseEnter={e => {
+            e.currentTarget.style.background = '#00c5ce'
+            e.currentTarget.style.boxShadow = '0 0 16px rgba(0,173,181,0.5)'
+          }}
+          onMouseLeave={e => {
+            e.currentTarget.style.background = '#00ADB5'
+            e.currentTarget.style.boxShadow = 'none'
+          }}
+        >
+          Hire Me
+        </a>
 
         {/* Mobile hamburger */}
         <button
-          className="flex md:hidden"
           onClick={() => setOpen(v => !v)}
-          aria-label="Toggle menu"
           style={{
             background: 'none',
             border: 'none',
-            cursor: 'pointer',
             color: 'var(--text-primary)',
+            cursor: 'pointer',
             padding: 4,
           }}
+          className="md:hidden"
+          aria-label="Toggle menu"
         >
           {open ? <X size={24} /> : <List size={24} />}
         </button>
       </div>
 
-      {/* Mobile menu — glass too */}
+      {/* Mobile menu */}
       {open && (
         <div
           style={{
-            borderTop: '1px solid rgba(255,255,255,0.08)',
-            background: 'rgba(34,40,49,0.6)',
+            background: 'rgba(34,40,49,0.65)',
             backdropFilter: 'blur(20px)',
             WebkitBackdropFilter: 'blur(20px)',
+            borderTop: '1px solid rgba(0,173,181,0.12)',
             padding: '12px 24px 20px',
           }}
           className="md:hidden"
@@ -181,7 +177,7 @@ export default function Navbar() {
                 padding: '12px 0',
                 fontSize: '0.95rem',
                 color: 'rgba(238,238,238,0.75)',
-                borderBottom: '1px solid rgba(255,255,255,0.06)',
+                borderBottom: '1px solid rgba(0,173,181,0.08)',
               }}
             >
               {l.label}
@@ -194,7 +190,7 @@ export default function Navbar() {
               display: 'inline-block',
               marginTop: 16,
               padding: '10px 24px',
-              background: 'var(--accent)',
+              background: '#00ADB5',
               color: '#222831',
               borderRadius: 6,
               fontSize: '0.9rem',

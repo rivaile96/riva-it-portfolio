@@ -10,12 +10,12 @@ const stats = [
 ]
 
 const glassCard: React.CSSProperties = {
-  background: 'rgba(255,255,255,0.04)',
+  background: 'rgba(34,40,49,0.45)',
   backdropFilter: 'blur(24px) saturate(160%)',
   WebkitBackdropFilter: 'blur(24px) saturate(160%)',
-  border: '1px solid rgba(255,255,255,0.1)',
+  border: '1px solid rgba(0,173,181,0.15)',
   borderRadius: 16,
-  boxShadow: '0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08)',
+  boxShadow: '0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05)',
 }
 
 export default function HeroSection() {
@@ -29,6 +29,7 @@ export default function HeroSection() {
         paddingTop: 80,
         position: 'relative',
         overflow: 'hidden',
+        zIndex: 1,
       }}
     >
       <div
@@ -63,17 +64,17 @@ export default function HeroSection() {
                 width: 72,
                 height: 72,
                 borderRadius: '50%',
-                border: '2px solid var(--accent)',
+                border: '2px solid #00ADB5',
                 overflow: 'hidden',
                 flexShrink: 0,
-                background: 'rgba(255,211,105,0.1)',
+                background: 'rgba(0,173,181,0.1)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 fontSize: '1.5rem',
                 fontWeight: 700,
-                color: 'var(--accent)',
-                boxShadow: '0 0 20px rgba(255,211,105,0.2)',
+                color: '#00ADB5',
+                boxShadow: '0 0 20px rgba(0,173,181,0.2)',
               }}
             >
               RI
@@ -96,15 +97,14 @@ export default function HeroSection() {
             >
               <span
                 style={{
-                  width: 7,
-                  height: 7,
+                  width: 6,
+                  height: 6,
                   borderRadius: '50%',
                   background: 'var(--signal-green)',
-                  display: 'inline-block',
-                  boxShadow: '0 0 6px #22c55e',
                 }}
+                className="animate-pulse-dot"
               />
-              Available for opportunities
+              Available for work
             </div>
           </div>
 
@@ -112,79 +112,52 @@ export default function HeroSection() {
           <div>
             <h1
               style={{
-                fontSize: 'clamp(2.2rem, 5vw, 3.2rem)',
-                fontWeight: 700,
+                fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)',
+                fontWeight: 800,
+                letterSpacing: '-0.04em',
                 lineHeight: 1.1,
-                letterSpacing: '-0.03em',
-                color: 'var(--text-primary)',
                 marginBottom: 8,
+                color: 'var(--text-primary)',
               }}
             >
               {profile.name}
             </h1>
             <p
               style={{
-                fontSize: 'clamp(1rem, 2vw, 1.2rem)',
-                color: 'var(--accent)',
+                fontSize: 'clamp(1rem, 1.5vw, 1.2rem)',
+                color: '#00ADB5',
                 fontWeight: 600,
-                marginBottom: 4,
+                letterSpacing: '-0.01em',
               }}
             >
               {profile.title}
             </p>
-            <p
-              style={{
-                fontSize: '0.82rem',
-                color: 'var(--text-muted)',
-                fontFamily: 'var(--font-mono)',
-                letterSpacing: '0.05em',
-              }}
-            >
-              {profile.subtitle}
-            </p>
           </div>
 
-          {/* Location + email */}
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16 }}>
-            <span
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 6,
-                fontSize: '0.82rem',
-                color: 'var(--text-secondary)',
-              }}
-            >
-              <MapPin size={14} weight="fill" style={{ color: 'var(--accent)' }} />
-              {profile.location}
-            </span>
-            <span
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 6,
-                fontSize: '0.82rem',
-                color: 'var(--text-secondary)',
-              }}
-            >
-              <EnvelopeSimple size={14} weight="fill" style={{ color: 'var(--accent)' }} />
-              {profile.email}
-            </span>
-          </div>
-
-          {/* Summary */}
+          {/* Bio */}
           <p
             style={{
               fontSize: '0.9rem',
               color: 'var(--text-secondary)',
-              lineHeight: 1.75,
-              maxWidth: 480,
+              lineHeight: 1.7,
             }}
           >
             {profile.summary}
           </p>
 
-          {/* CTAs */}
+          {/* Location + email */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.82rem', color: 'var(--text-muted)' }}>
+              <MapPin size={14} weight="fill" style={{ color: '#00ADB5', flexShrink: 0 }} />
+              {profile.location}
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.82rem', color: 'var(--text-muted)' }}>
+              <EnvelopeSimple size={14} weight="fill" style={{ color: '#00ADB5', flexShrink: 0 }} />
+              {profile.email}
+            </div>
+          </div>
+
+          {/* CTA buttons */}
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             <a
               href="#contact"
@@ -192,123 +165,64 @@ export default function HeroSection() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 8,
-                padding: '12px 24px',
-                background: 'var(--accent)',
+                padding: '10px 22px',
+                background: '#00ADB5',
                 color: '#222831',
                 borderRadius: 8,
+                fontSize: '0.875rem',
                 fontWeight: 700,
-                fontSize: '0.9rem',
-                transition: 'all 0.2s',
-                boxShadow: '0 0 20px rgba(255,211,105,0.3)',
+                transition: 'background 0.2s, box-shadow 0.2s',
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.background = 'var(--accent-hover)'
-                e.currentTarget.style.boxShadow = '0 0 32px rgba(255,211,105,0.5)'
-                e.currentTarget.style.transform = 'translateY(-1px)'
+                e.currentTarget.style.background = '#00c5ce'
+                e.currentTarget.style.boxShadow = '0 0 20px rgba(0,173,181,0.4)'
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.background = 'var(--accent)'
-                e.currentTarget.style.boxShadow = '0 0 20px rgba(255,211,105,0.3)'
-                e.currentTarget.style.transform = 'translateY(0)'
+                e.currentTarget.style.background = '#00ADB5'
+                e.currentTarget.style.boxShadow = 'none'
               }}
             >
-              Get in Touch <ArrowRight size={16} weight="bold" />
+              Get In Touch <ArrowRight size={16} weight="bold" />
             </a>
             <a
-              href="#projects"
+              href="/resume.pdf"
+              download
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 8,
-                padding: '12px 24px',
-                background: 'rgba(255,255,255,0.05)',
+                padding: '10px 22px',
+                background: 'rgba(34,40,49,0.45)',
+                border: '1px solid rgba(0,173,181,0.2)',
                 color: 'var(--text-primary)',
-                border: '1px solid rgba(255,255,255,0.12)',
                 borderRadius: 8,
+                fontSize: '0.875rem',
                 fontWeight: 600,
-                fontSize: '0.9rem',
-                transition: 'all 0.2s',
                 backdropFilter: 'blur(8px)',
+                transition: 'border-color 0.2s, background 0.2s',
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.borderColor = 'var(--accent)'
-                e.currentTarget.style.background = 'rgba(255,211,105,0.08)'
+                e.currentTarget.style.borderColor = '#00ADB5'
+                e.currentTarget.style.background = 'rgba(0,173,181,0.08)'
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'
-                e.currentTarget.style.background = 'rgba(255,255,255,0.05)'
+                e.currentTarget.style.borderColor = 'rgba(0,173,181,0.2)'
+                e.currentTarget.style.background = 'rgba(34,40,49,0.45)'
               }}
             >
-              View Projects <DownloadSimple size={16} />
+              <DownloadSimple size={16} weight="bold" /> Resume
             </a>
-          </div>
-        </div>
-
-        {/* Right — glass stats card */}
-        <div
-          style={{
-            ...glassCard,
-            padding: 32,
-          }}
-        >
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: 2,
-              marginBottom: 24,
-            }}
-          >
-            {stats.map((s, i) => (
-              <div
-                key={s.label}
-                style={{
-                  padding: 24,
-                  background: 'rgba(255,255,255,0.03)',
-                  borderRadius: i === 0 ? '10px 0 0 0' : i === 1 ? '0 10px 0 0' : i === 2 ? '0 0 0 10px' : '0 0 10px 0',
-                  textAlign: 'center',
-                  border: '1px solid rgba(255,255,255,0.06)',
-                  transition: 'background 0.2s',
-                }}
-                onMouseEnter={e => (e.currentTarget.style.background = 'rgba(255,211,105,0.05)')}
-                onMouseLeave={e => (e.currentTarget.style.background = 'rgba(255,255,255,0.03)')}
-              >
-                <div
-                  style={{
-                    fontSize: '2.2rem',
-                    fontWeight: 800,
-                    color: 'var(--accent)',
-                    lineHeight: 1,
-                    marginBottom: 6,
-                    fontFamily: 'var(--font-mono)',
-                    textShadow: '0 0 20px rgba(255,211,105,0.4)',
-                  }}
-                >
-                  {s.value}
-                </div>
-                <div
-                  style={{
-                    fontSize: '0.68rem',
-                    color: 'var(--text-muted)',
-                    letterSpacing: '0.08em',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  {s.label}
-                </div>
-              </div>
-            ))}
           </div>
 
           {/* Tech tags */}
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-            {['RFID', 'Linux', 'Laravel', 'TCP/IP', 'IoT', 'Fortinet', 'Python', 'REST API'].map(t => (
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+            {profile.subtitle.split(' · ').map((t: string) => (
               <span
                 key={t}
                 style={{
                   padding: '4px 12px',
-                  background: 'rgba(255,255,255,0.05)',
-                  border: '1px solid rgba(255,255,255,0.1)',
+                  background: 'rgba(34,40,49,0.6)',
+                  border: '1px solid rgba(0,173,181,0.15)',
                   borderRadius: 20,
                   fontSize: '0.72rem',
                   color: 'rgba(238,238,238,0.7)',
@@ -316,20 +230,78 @@ export default function HeroSection() {
                   fontWeight: 500,
                   backdropFilter: 'blur(4px)',
                   transition: 'all 0.15s',
+                  cursor: 'default',
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.borderColor = 'rgba(255,211,105,0.4)'
-                  e.currentTarget.style.color = 'var(--accent)'
+                  e.currentTarget.style.borderColor = 'rgba(0,173,181,0.4)'
+                  e.currentTarget.style.color = '#00ADB5'
                 }}
                 onMouseLeave={e => {
-                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'
+                  e.currentTarget.style.borderColor = 'rgba(0,173,181,0.15)'
                   e.currentTarget.style.color = 'rgba(238,238,238,0.7)'
                 }}
               >
-                {t}
+                {t.trim()}
               </span>
             ))}
           </div>
+        </div>
+
+        {/* Right — stats glass card */}
+        <div
+          style={{
+            ...glassCard,
+            padding: '40px 32px',
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: 24,
+          }}
+        >
+          {stats.map(s => (
+            <div
+              key={s.label}
+              style={{
+                padding: '24px 20px',
+                background: 'rgba(0,173,181,0.04)',
+                border: '1px solid rgba(0,173,181,0.1)',
+                borderRadius: 12,
+                textAlign: 'center',
+                transition: 'border-color 0.2s, background 0.2s',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.borderColor = 'rgba(0,173,181,0.3)'
+                e.currentTarget.style.background = 'rgba(0,173,181,0.08)'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.borderColor = 'rgba(0,173,181,0.1)'
+                e.currentTarget.style.background = 'rgba(0,173,181,0.04)'
+              }}
+            >
+              <div
+                style={{
+                  fontSize: 'clamp(2rem, 3vw, 2.8rem)',
+                  fontWeight: 800,
+                  color: '#00ADB5',
+                  letterSpacing: '-0.04em',
+                  lineHeight: 1,
+                  marginBottom: 8,
+                  textShadow: '0 0 20px rgba(0,173,181,0.4)',
+                }}
+              >
+                {s.value}
+              </div>
+              <div
+                style={{
+                  fontSize: '0.75rem',
+                  color: 'var(--text-secondary)',
+                  fontWeight: 500,
+                  lineHeight: 1.3,
+                }}
+              >
+                {s.label}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
