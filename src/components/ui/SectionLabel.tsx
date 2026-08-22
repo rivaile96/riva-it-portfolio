@@ -11,7 +11,7 @@ export default function SectionLabel({ text, className = '' }: SectionLabelProps
           display: 'inline-block',
           width: 28,
           height: 1,
-          background: '#00ADB5',
+          background: '#FF6B00',
         }}
       />
       <span
@@ -20,7 +20,7 @@ export default function SectionLabel({ text, className = '' }: SectionLabelProps
           fontSize: '0.7rem',
           letterSpacing: '0.18em',
           textTransform: 'uppercase',
-          color: '#00ADB5',
+          color: '#FF6B00',
           fontWeight: 500,
         }}
       >

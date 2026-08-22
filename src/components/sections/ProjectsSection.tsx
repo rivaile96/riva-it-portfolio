@@ -6,7 +6,7 @@ const glass: React.CSSProperties = {
   background: 'rgba(34,40,49,0.45)',
   backdropFilter: 'blur(20px) saturate(160%)',
   WebkitBackdropFilter: 'blur(20px) saturate(160%)',
-  border: '1px solid rgba(0,173,181,0.15)',
+  border: '1px solid rgba(255,107,0,0.15)',
   borderRadius: 12,
   boxShadow: '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)',
 }
@@ -58,12 +58,12 @@ export default function ProjectsSection() {
                 cursor: 'default',
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.borderColor = 'rgba(0,173,181,0.4)'
-                e.currentTarget.style.boxShadow = '0 0 32px rgba(0,173,181,0.1), 0 8px 32px rgba(0,0,0,0.3)'
+                e.currentTarget.style.borderColor = 'rgba(255,107,0,0.4)'
+                e.currentTarget.style.boxShadow = '0 0 32px rgba(255,107,0,0.1), 0 8px 32px rgba(0,0,0,0.3)'
                 e.currentTarget.style.transform = 'translateY(-2px)'
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.borderColor = 'rgba(0,173,181,0.15)'
+                e.currentTarget.style.borderColor = 'rgba(255,107,0,0.15)'
                 e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)'
                 e.currentTarget.style.transform = 'translateY(0)'
               }}
@@ -74,7 +74,7 @@ export default function ProjectsSection() {
                   style={{
                     fontFamily: 'var(--font-mono)',
                     fontSize: '0.7rem',
-                    color: '#00ADB5',
+                    color: '#FF6B00',
                     opacity: 0.6,
                     marginBottom: 8,
                     letterSpacing: '0.1em',
@@ -113,21 +113,21 @@ export default function ProjectsSection() {
                     key={t}
                     style={{
                       padding: '3px 10px',
-                      background: 'rgba(0,173,181,0.06)',
-                      border: '1px solid rgba(0,173,181,0.18)',
+                      background: 'rgba(255,107,0,0.06)',
+                      border: '1px solid rgba(255,107,0,0.18)',
                       borderRadius: 20,
                       fontSize: '0.7rem',
-                      color: 'rgba(0,173,181,0.85)',
+                      color: 'rgba(255,107,0,0.85)',
                       fontFamily: 'var(--font-mono)',
                       transition: 'border-color 0.15s, color 0.15s',
                     }}
                     onMouseEnter={e => {
-                      e.currentTarget.style.borderColor = 'rgba(0,173,181,0.5)'
-                      e.currentTarget.style.color = '#00ADB5'
+                      e.currentTarget.style.borderColor = 'rgba(255,107,0,0.5)'
+                      e.currentTarget.style.color = '#FF6B00'
                     }}
                     onMouseLeave={e => {
-                      e.currentTarget.style.borderColor = 'rgba(0,173,181,0.18)'
-                      e.currentTarget.style.color = 'rgba(0,173,181,0.85)'
+                      e.currentTarget.style.borderColor = 'rgba(255,107,0,0.18)'
+                      e.currentTarget.style.color = 'rgba(255,107,0,0.85)'
                     }}
                   >
                     {t}

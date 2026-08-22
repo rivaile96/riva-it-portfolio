@@ -13,7 +13,7 @@ const glassCard: React.CSSProperties = {
   background: 'rgba(34,40,49,0.45)',
   backdropFilter: 'blur(24px) saturate(160%)',
   WebkitBackdropFilter: 'blur(24px) saturate(160%)',
-  border: '1px solid rgba(0,173,181,0.15)',
+  border: '1px solid rgba(255,107,0,0.15)',
   borderRadius: 16,
   boxShadow: '0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05)',
 }
@@ -64,10 +64,10 @@ export default function HeroSection() {
                 width: 80,
                 height: 80,
                 borderRadius: '50%',
-                border: '2px solid #00ADB5',
+                border: '2px solid #FF6B00',
                 overflow: 'hidden',
                 flexShrink: 0,
-                boxShadow: '0 0 24px rgba(0,173,181,0.35)',
+                boxShadow: '0 0 24px rgba(255,107,0,0.35)',
               }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -123,7 +123,7 @@ export default function HeroSection() {
             <p
               style={{
                 fontSize: 'clamp(1rem, 1.5vw, 1.2rem)',
-                color: '#00ADB5',
+                color: '#FF6B00',
                 fontWeight: 600,
                 letterSpacing: '-0.01em',
               }}
@@ -146,11 +146,11 @@ export default function HeroSection() {
           {/* Location + email */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.82rem', color: 'var(--text-muted)' }}>
-              <MapPin size={14} weight="fill" style={{ color: '#00ADB5', flexShrink: 0 }} />
+              <MapPin size={14} weight="fill" style={{ color: '#FF6B00', flexShrink: 0 }} />
               {profile.location}
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.82rem', color: 'var(--text-muted)' }}>
-              <EnvelopeSimple size={14} weight="fill" style={{ color: '#00ADB5', flexShrink: 0 }} />
+              <EnvelopeSimple size={14} weight="fill" style={{ color: '#FF6B00', flexShrink: 0 }} />
               {profile.email}
             </div>
           </div>
@@ -164,7 +164,7 @@ export default function HeroSection() {
                 alignItems: 'center',
                 gap: 8,
                 padding: '10px 22px',
-                background: '#00ADB5',
+                background: '#FF6B00',
                 color: '#222831',
                 borderRadius: 8,
                 fontSize: '0.875rem',
@@ -172,11 +172,11 @@ export default function HeroSection() {
                 transition: 'background 0.2s, box-shadow 0.2s',
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.background = '#00c5ce'
-                e.currentTarget.style.boxShadow = '0 0 20px rgba(0,173,181,0.4)'
+                e.currentTarget.style.background = '#ff8533'
+                e.currentTarget.style.boxShadow = '0 0 20px rgba(255,107,0,0.4)'
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.background = '#00ADB5'
+                e.currentTarget.style.background = '#FF6B00'
                 e.currentTarget.style.boxShadow = 'none'
               }}
             >
@@ -191,7 +191,7 @@ export default function HeroSection() {
                 gap: 8,
                 padding: '10px 22px',
                 background: 'rgba(34,40,49,0.45)',
-                border: '1px solid rgba(0,173,181,0.2)',
+                border: '1px solid rgba(255,107,0,0.2)',
                 color: 'var(--text-primary)',
                 borderRadius: 8,
                 fontSize: '0.875rem',
@@ -200,11 +200,11 @@ export default function HeroSection() {
                 transition: 'border-color 0.2s, background 0.2s',
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.borderColor = '#00ADB5'
-                e.currentTarget.style.background = 'rgba(0,173,181,0.08)'
+                e.currentTarget.style.borderColor = '#FF6B00'
+                e.currentTarget.style.background = 'rgba(255,107,0,0.08)'
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.borderColor = 'rgba(0,173,181,0.2)'
+                e.currentTarget.style.borderColor = 'rgba(255,107,0,0.2)'
                 e.currentTarget.style.background = 'rgba(34,40,49,0.45)'
               }}
             >
@@ -220,7 +220,7 @@ export default function HeroSection() {
                 style={{
                   padding: '4px 12px',
                   background: 'rgba(34,40,49,0.6)',
-                  border: '1px solid rgba(0,173,181,0.15)',
+                  border: '1px solid rgba(255,107,0,0.15)',
                   borderRadius: 20,
                   fontSize: '0.72rem',
                   color: 'rgba(238,238,238,0.7)',
@@ -231,11 +231,11 @@ export default function HeroSection() {
                   cursor: 'default',
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.borderColor = 'rgba(0,173,181,0.4)'
-                  e.currentTarget.style.color = '#00ADB5'
+                  e.currentTarget.style.borderColor = 'rgba(255,107,0,0.4)'
+                  e.currentTarget.style.color = '#FF6B00'
                 }}
                 onMouseLeave={e => {
-                  e.currentTarget.style.borderColor = 'rgba(0,173,181,0.15)'
+                  e.currentTarget.style.borderColor = 'rgba(255,107,0,0.15)'
                   e.currentTarget.style.color = 'rgba(238,238,238,0.7)'
                 }}
               >
@@ -260,30 +260,30 @@ export default function HeroSection() {
               key={s.label}
               style={{
                 padding: '24px 20px',
-                background: 'rgba(0,173,181,0.04)',
-                border: '1px solid rgba(0,173,181,0.1)',
+                background: 'rgba(255,107,0,0.04)',
+                border: '1px solid rgba(255,107,0,0.1)',
                 borderRadius: 12,
                 textAlign: 'center',
                 transition: 'border-color 0.2s, background 0.2s',
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.borderColor = 'rgba(0,173,181,0.3)'
-                e.currentTarget.style.background = 'rgba(0,173,181,0.08)'
+                e.currentTarget.style.borderColor = 'rgba(255,107,0,0.3)'
+                e.currentTarget.style.background = 'rgba(255,107,0,0.08)'
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.borderColor = 'rgba(0,173,181,0.1)'
-                e.currentTarget.style.background = 'rgba(0,173,181,0.04)'
+                e.currentTarget.style.borderColor = 'rgba(255,107,0,0.1)'
+                e.currentTarget.style.background = 'rgba(255,107,0,0.04)'
               }}
             >
               <div
                 style={{
                   fontSize: 'clamp(2rem, 3vw, 2.8rem)',
                   fontWeight: 800,
-                  color: '#00ADB5',
+                  color: '#FF6B00',
                   letterSpacing: '-0.04em',
                   lineHeight: 1,
                   marginBottom: 8,
-                  textShadow: '0 0 20px rgba(0,173,181,0.4)',
+                  textShadow: '0 0 20px rgba(255,107,0,0.4)',
                 }}
               >
                 {s.value}

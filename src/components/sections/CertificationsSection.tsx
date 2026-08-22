@@ -9,7 +9,7 @@ const glass: React.CSSProperties = {
   background: 'rgba(34,40,49,0.45)',
   backdropFilter: 'blur(20px) saturate(160%)',
   WebkitBackdropFilter: 'blur(20px) saturate(160%)',
-  border: '1px solid rgba(0,173,181,0.15)',
+  border: '1px solid rgba(255,107,0,0.15)',
   borderRadius: 12,
   boxShadow: '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)',
 }
@@ -64,11 +64,11 @@ export default function CertificationsSection() {
                   transition: 'border-color 0.2s, box-shadow 0.2s',
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.borderColor = 'rgba(0,173,181,0.4)'
-                  e.currentTarget.style.boxShadow = '0 0 28px rgba(0,173,181,0.1), 0 8px 32px rgba(0,0,0,0.3)'
+                  e.currentTarget.style.borderColor = 'rgba(255,107,0,0.4)'
+                  e.currentTarget.style.boxShadow = '0 0 28px rgba(255,107,0,0.1), 0 8px 32px rgba(0,0,0,0.3)'
                 }}
                 onMouseLeave={e => {
-                  e.currentTarget.style.borderColor = 'rgba(0,173,181,0.15)'
+                  e.currentTarget.style.borderColor = 'rgba(255,107,0,0.15)'
                   e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)'
                 }}
               >
@@ -78,14 +78,14 @@ export default function CertificationsSection() {
                     width: 48,
                     height: 48,
                     borderRadius: 10,
-                    background: 'rgba(0,173,181,0.12)',
-                    border: '1px solid rgba(0,173,181,0.25)',
+                    background: 'rgba(255,107,0,0.12)',
+                    border: '1px solid rgba(255,107,0,0.25)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                   }}
                 >
-                  <Icon size={24} style={{ color: '#00ADB5' }} weight="duotone" />
+                  <Icon size={24} style={{ color: '#FF6B00' }} weight="duotone" />
                 </div>
 
                 <div>
@@ -148,10 +148,10 @@ export default function CertificationsSection() {
                     transition: 'border-color 0.2s',
                   }}
                   onMouseEnter={e => {
-                    e.currentTarget.style.borderColor = 'rgba(0,173,181,0.35)'
+                    e.currentTarget.style.borderColor = 'rgba(255,107,0,0.35)'
                   }}
                   onMouseLeave={e => {
-                    e.currentTarget.style.borderColor = 'rgba(0,173,181,0.15)'
+                    e.currentTarget.style.borderColor = 'rgba(255,107,0,0.15)'
                   }}
                 >
                   <div

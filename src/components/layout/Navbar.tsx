@@ -25,7 +25,7 @@ export default function Navbar() {
           background: 'rgba(34,40,49,0.4)',
           backdropFilter: 'blur(20px) saturate(180%)',
           WebkitBackdropFilter: 'blur(20px) saturate(180%)',
-          borderBottom: '1px solid rgba(0,173,181,0.15)',
+          borderBottom: '1px solid rgba(255,107,0,0.15)',
           boxShadow: '0 4px 32px rgba(0,0,0,0.3)',
         }}
       >
@@ -46,7 +46,7 @@ export default function Navbar() {
               style={{
                 width: 36,
                 height: 36,
-                background: '#00ADB5',
+                background: '#FF6B00',
                 borderRadius: 6,
                 display: 'flex',
                 alignItems: 'center',
@@ -57,7 +57,7 @@ export default function Navbar() {
                 fontFamily: 'var(--font-mono)',
                 letterSpacing: '-0.02em',
                 flexShrink: 0,
-                boxShadow: '0 0 12px rgba(0,173,181,0.4)',
+                boxShadow: '0 0 12px rgba(255,107,0,0.4)',
               }}
             >
               RI
@@ -100,7 +100,7 @@ export default function Navbar() {
                   }}
                   onMouseEnter={e => {
                     e.currentTarget.style.color = '#EEEEEE'
-                    e.currentTarget.style.background = 'rgba(0,173,181,0.08)'
+                    e.currentTarget.style.background = 'rgba(255,107,0,0.08)'
                   }}
                   onMouseLeave={e => {
                     e.currentTarget.style.color = 'rgba(238,238,238,0.7)'
@@ -119,7 +119,7 @@ export default function Navbar() {
             className="desktop-cta"
             style={{
               padding: '8px 20px',
-              background: '#00ADB5',
+              background: '#FF6B00',
               color: '#222831',
               borderRadius: 6,
               fontSize: '0.85rem',
@@ -127,11 +127,11 @@ export default function Navbar() {
               transition: 'background 0.2s, box-shadow 0.2s',
             }}
             onMouseEnter={e => {
-              e.currentTarget.style.background = '#00c5ce'
-              e.currentTarget.style.boxShadow = '0 0 16px rgba(0,173,181,0.5)'
+              e.currentTarget.style.background = '#ff8533'
+              e.currentTarget.style.boxShadow = '0 0 16px rgba(255,107,0,0.5)'
             }}
             onMouseLeave={e => {
-              e.currentTarget.style.background = '#00ADB5'
+              e.currentTarget.style.background = '#FF6B00'
               e.currentTarget.style.boxShadow = 'none'
             }}
           >
@@ -152,7 +152,7 @@ export default function Navbar() {
           background: 'rgba(34,40,49,0.75)',
           backdropFilter: 'blur(24px) saturate(180%)',
           WebkitBackdropFilter: 'blur(24px) saturate(180%)',
-          borderTop: '1px solid rgba(0,173,181,0.15)',
+          borderTop: '1px solid rgba(255,107,0,0.15)',
           boxShadow: '0 -4px 32px rgba(0,0,0,0.4)',
           display: 'flex',
           alignItems: 'center',
@@ -183,7 +183,7 @@ export default function Navbar() {
                 minWidth: 44,
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.color = '#00ADB5'
+                e.currentTarget.style.color = '#FF6B00'
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.color = 'rgba(238,238,238,0.5)'

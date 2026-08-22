@@ -6,7 +6,7 @@ const glass: React.CSSProperties = {
   background: 'rgba(34,40,49,0.45)',
   backdropFilter: 'blur(20px) saturate(160%)',
   WebkitBackdropFilter: 'blur(20px) saturate(160%)',
-  border: '1px solid rgba(0,173,181,0.15)',
+  border: '1px solid rgba(255,107,0,0.15)',
   borderRadius: 12,
   boxShadow: '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)',
 }
@@ -54,11 +54,11 @@ export default function SkillsSection() {
                 transition: 'border-color 0.2s, box-shadow 0.2s',
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.borderColor = 'rgba(0,173,181,0.35)'
-                e.currentTarget.style.boxShadow = '0 0 28px rgba(0,173,181,0.08), 0 8px 32px rgba(0,0,0,0.3)'
+                e.currentTarget.style.borderColor = 'rgba(255,107,0,0.35)'
+                e.currentTarget.style.boxShadow = '0 0 28px rgba(255,107,0,0.08), 0 8px 32px rgba(0,0,0,0.3)'
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.borderColor = 'rgba(0,173,181,0.15)'
+                e.currentTarget.style.borderColor = 'rgba(255,107,0,0.15)'
                 e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)'
               }}
             >
@@ -69,14 +69,14 @@ export default function SkillsSection() {
                     width: 32,
                     height: 32,
                     borderRadius: 6,
-                    background: 'rgba(0,173,181,0.12)',
-                    border: '1px solid rgba(0,173,181,0.25)',
+                    background: 'rgba(255,107,0,0.12)',
+                    border: '1px solid rgba(255,107,0,0.25)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     fontFamily: 'var(--font-mono)',
                     fontSize: '0.7rem',
-                    color: '#00ADB5',
+                    color: '#FF6B00',
                     fontWeight: 700,
                     flexShrink: 0,
                   }}
@@ -113,7 +113,7 @@ export default function SkillsSection() {
                         width: 5,
                         height: 5,
                         borderRadius: '50%',
-                        background: '#00ADB5',
+                        background: '#FF6B00',
                         flexShrink: 0,
                         opacity: 0.8,
                       }}

@@ -14,7 +14,7 @@ const glass: React.CSSProperties = {
   background: 'rgba(34,40,49,0.45)',
   backdropFilter: 'blur(20px) saturate(160%)',
   WebkitBackdropFilter: 'blur(20px) saturate(160%)',
-  border: '1px solid rgba(0,173,181,0.15)',
+  border: '1px solid rgba(255,107,0,0.15)',
   borderRadius: 12,
   boxShadow: '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)',
 }
@@ -108,11 +108,11 @@ export default function AboutSection() {
                   transition: 'border-color 0.2s, background 0.2s',
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.borderColor = 'rgba(0,173,181,0.35)'
+                  e.currentTarget.style.borderColor = 'rgba(255,107,0,0.35)'
                   e.currentTarget.style.background = 'rgba(34,40,49,0.6)'
                 }}
                 onMouseLeave={e => {
-                  e.currentTarget.style.borderColor = 'rgba(0,173,181,0.15)'
+                  e.currentTarget.style.borderColor = 'rgba(255,107,0,0.15)'
                   e.currentTarget.style.background = 'rgba(34,40,49,0.45)'
                 }}
               >
@@ -120,8 +120,8 @@ export default function AboutSection() {
                   style={{
                     width: 36,
                     height: 36,
-                    background: 'rgba(0,173,181,0.12)',
-                    border: '1px solid rgba(0,173,181,0.2)',
+                    background: 'rgba(255,107,0,0.12)',
+                    border: '1px solid rgba(255,107,0,0.2)',
                     borderRadius: 8,
                     display: 'flex',
                     alignItems: 'center',
@@ -129,7 +129,7 @@ export default function AboutSection() {
                     flexShrink: 0,
                   }}
                 >
-                  <Icon size={18} style={{ color: '#00ADB5' }} weight="fill" />
+                  <Icon size={18} style={{ color: '#FF6B00' }} weight="fill" />
                 </div>
                 <div>
                   <div

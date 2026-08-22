@@ -6,7 +6,7 @@ const glass: React.CSSProperties = {
   background: 'rgba(34,40,49,0.45)',
   backdropFilter: 'blur(20px) saturate(160%)',
   WebkitBackdropFilter: 'blur(20px) saturate(160%)',
-  border: '1px solid rgba(0,173,181,0.15)',
+  border: '1px solid rgba(255,107,0,0.15)',
   borderRadius: 12,
   boxShadow: '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)',
 }
@@ -47,7 +47,7 @@ export default function ExperienceSection() {
               top: 8,
               bottom: 0,
               width: 1,
-              background: 'linear-gradient(to bottom, #00ADB5 0%, rgba(0,173,181,0.05) 100%)',
+              background: 'linear-gradient(to bottom, #FF6B00 0%, rgba(255,107,0,0.05) 100%)',
             }}
           />
 
@@ -68,9 +68,9 @@ export default function ExperienceSection() {
                   width: 15,
                   height: 15,
                   borderRadius: '50%',
-                  background: idx === 0 ? '#00ADB5' : 'var(--bg-elevated)',
-                  border: `2px solid ${idx === 0 ? '#00ADB5' : 'rgba(0,173,181,0.2)'}`,
-                  boxShadow: idx === 0 ? '0 0 10px rgba(0,173,181,0.5)' : 'none',
+                  background: idx === 0 ? '#FF6B00' : 'var(--bg-elevated)',
+                  border: `2px solid ${idx === 0 ? '#FF6B00' : 'rgba(255,107,0,0.2)'}`,
+                  boxShadow: idx === 0 ? '0 0 10px rgba(255,107,0,0.5)' : 'none',
                   zIndex: 1,
                 }}
               />
@@ -83,11 +83,11 @@ export default function ExperienceSection() {
                   transition: 'border-color 0.15s, box-shadow 0.15s',
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.borderColor = 'rgba(0,173,181,0.35)'
-                  e.currentTarget.style.boxShadow = '0 0 24px rgba(0,173,181,0.08), 0 8px 32px rgba(0,0,0,0.3)'
+                  e.currentTarget.style.borderColor = 'rgba(255,107,0,0.35)'
+                  e.currentTarget.style.boxShadow = '0 0 24px rgba(255,107,0,0.08), 0 8px 32px rgba(0,0,0,0.3)'
                 }}
                 onMouseLeave={e => {
-                  e.currentTarget.style.borderColor = 'rgba(0,173,181,0.15)'
+                  e.currentTarget.style.borderColor = 'rgba(255,107,0,0.15)'
                   e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)'
                 }}
               >
@@ -117,7 +117,7 @@ export default function ExperienceSection() {
                     <div
                       style={{
                         fontSize: '0.85rem',
-                        color: '#00ADB5',
+                        color: '#FF6B00',
                         fontWeight: 600,
                       }}
                     >
@@ -128,11 +128,11 @@ export default function ExperienceSection() {
                   <span
                     style={{
                       padding: '4px 12px',
-                      background: 'rgba(0,173,181,0.1)',
-                      border: '1px solid rgba(0,173,181,0.2)',
+                      background: 'rgba(255,107,0,0.1)',
+                      border: '1px solid rgba(255,107,0,0.2)',
                       borderRadius: 20,
                       fontSize: '0.75rem',
-                      color: '#00ADB5',
+                      color: '#FF6B00',
                       fontFamily: 'var(--font-mono)',
                       fontWeight: 500,
                       whiteSpace: 'nowrap',
@@ -161,7 +161,7 @@ export default function ExperienceSection() {
                           width: 4,
                           height: 4,
                           borderRadius: '50%',
-                          background: '#00ADB5',
+                          background: '#FF6B00',
                           flexShrink: 0,
                           opacity: 0.6,
                         }}

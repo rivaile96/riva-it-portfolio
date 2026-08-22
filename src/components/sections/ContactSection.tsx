@@ -15,7 +15,7 @@ const glass: React.CSSProperties = {
   background: 'rgba(34,40,49,0.45)',
   backdropFilter: 'blur(20px) saturate(160%)',
   WebkitBackdropFilter: 'blur(20px) saturate(160%)',
-  border: '1px solid rgba(0,173,181,0.15)',
+  border: '1px solid rgba(255,107,0,0.15)',
   borderRadius: 12,
   boxShadow: '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)',
 }
@@ -94,19 +94,19 @@ export default function ContactSection() {
                     alignItems: 'center',
                     gap: 14,
                     padding: '12px 16px',
-                    background: 'rgba(0,173,181,0.04)',
-                    border: '1px solid rgba(0,173,181,0.12)',
+                    background: 'rgba(255,107,0,0.04)',
+                    border: '1px solid rgba(255,107,0,0.12)',
                     borderRadius: 8,
                     transition: 'border-color 0.15s, background 0.15s',
                     textDecoration: 'none',
                   }}
                   onMouseEnter={e => {
-                    e.currentTarget.style.borderColor = 'rgba(0,173,181,0.35)'
-                    e.currentTarget.style.background = 'rgba(0,173,181,0.08)'
+                    e.currentTarget.style.borderColor = 'rgba(255,107,0,0.35)'
+                    e.currentTarget.style.background = 'rgba(255,107,0,0.08)'
                   }}
                   onMouseLeave={e => {
-                    e.currentTarget.style.borderColor = 'rgba(0,173,181,0.12)'
-                    e.currentTarget.style.background = 'rgba(0,173,181,0.04)'
+                    e.currentTarget.style.borderColor = 'rgba(255,107,0,0.12)'
+                    e.currentTarget.style.background = 'rgba(255,107,0,0.04)'
                   }}
                 >
                   <div
@@ -114,15 +114,15 @@ export default function ContactSection() {
                       width: 36,
                       height: 36,
                       borderRadius: 8,
-                      background: 'rgba(0,173,181,0.1)',
-                      border: '1px solid rgba(0,173,181,0.2)',
+                      background: 'rgba(255,107,0,0.1)',
+                      border: '1px solid rgba(255,107,0,0.2)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       flexShrink: 0,
                     }}
                   >
-                    <Icon size={17} style={{ color: '#00ADB5' }} weight="fill" />
+                    <Icon size={17} style={{ color: '#FF6B00' }} weight="fill" />
                   </div>
                   <div>
                     <div
@@ -175,7 +175,7 @@ export default function ContactSection() {
                 style={{
                   padding: '10px 14px',
                   background: 'rgba(34,40,49,0.6)',
-                  border: '1px solid rgba(0,173,181,0.2)',
+                  border: '1px solid rgba(255,107,0,0.2)',
                   borderRadius: 8,
                   color: 'var(--text-primary)',
                   fontSize: '0.9rem',
@@ -183,8 +183,8 @@ export default function ContactSection() {
                   transition: 'border-color 0.15s',
                   width: '100%',
                 }}
-                onFocus={e => (e.target.style.borderColor = '#00ADB5')}
-                onBlur={e => (e.target.style.borderColor = 'rgba(0,173,181,0.2)')}
+                onFocus={e => (e.target.style.borderColor = '#FF6B00')}
+                onBlur={e => (e.target.style.borderColor = 'rgba(255,107,0,0.2)')}
               />
             </div>
 
@@ -207,7 +207,7 @@ export default function ContactSection() {
                 style={{
                   padding: '10px 14px',
                   background: 'rgba(34,40,49,0.6)',
-                  border: '1px solid rgba(0,173,181,0.2)',
+                  border: '1px solid rgba(255,107,0,0.2)',
                   borderRadius: 8,
                   color: 'var(--text-primary)',
                   fontSize: '0.9rem',
@@ -215,8 +215,8 @@ export default function ContactSection() {
                   transition: 'border-color 0.15s',
                   width: '100%',
                 }}
-                onFocus={e => (e.target.style.borderColor = '#00ADB5')}
-                onBlur={e => (e.target.style.borderColor = 'rgba(0,173,181,0.2)')}
+                onFocus={e => (e.target.style.borderColor = '#FF6B00')}
+                onBlur={e => (e.target.style.borderColor = 'rgba(255,107,0,0.2)')}
               />
             </div>
 
@@ -239,7 +239,7 @@ export default function ContactSection() {
                 style={{
                   padding: '10px 14px',
                   background: 'rgba(34,40,49,0.6)',
-                  border: '1px solid rgba(0,173,181,0.2)',
+                  border: '1px solid rgba(255,107,0,0.2)',
                   borderRadius: 8,
                   color: 'var(--text-primary)',
                   fontSize: '0.9rem',
@@ -249,8 +249,8 @@ export default function ContactSection() {
                   width: '100%',
                   fontFamily: 'inherit',
                 }}
-                onFocus={e => (e.target.style.borderColor = '#00ADB5')}
-                onBlur={e => (e.target.style.borderColor = 'rgba(0,173,181,0.2)')}
+                onFocus={e => (e.target.style.borderColor = '#FF6B00')}
+                onBlur={e => (e.target.style.borderColor = 'rgba(255,107,0,0.2)')}
               />
             </div>
 
@@ -264,7 +264,7 @@ export default function ContactSection() {
                 justifyContent: 'center',
                 gap: 8,
                 padding: '12px 24px',
-                background: sent ? 'rgba(0,173,181,0.4)' : '#00ADB5',
+                background: sent ? 'rgba(255,107,0,0.4)' : '#FF6B00',
                 color: '#222831',
                 borderRadius: 8,
                 border: 'none',
@@ -275,13 +275,13 @@ export default function ContactSection() {
               }}
               onMouseEnter={e => {
                 if (!sent) {
-                  e.currentTarget.style.background = '#00c5ce'
-                  e.currentTarget.style.boxShadow = '0 0 20px rgba(0,173,181,0.4)'
+                  e.currentTarget.style.background = '#ff8533'
+                  e.currentTarget.style.boxShadow = '0 0 20px rgba(255,107,0,0.4)'
                 }
               }}
               onMouseLeave={e => {
                 if (!sent) {
-                  e.currentTarget.style.background = '#00ADB5'
+                  e.currentTarget.style.background = '#FF6B00'
                   e.currentTarget.style.boxShadow = 'none'
                 }
               }}
