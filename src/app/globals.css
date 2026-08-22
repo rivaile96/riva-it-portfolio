@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --bg-void: #0a0a0a;
-  --bg-surface: #111111;
-  --bg-elevated: #161616;
-  --bg-border: #222222;
-  --accent: #FF6B00;
-  --accent-hover: #FF8533;
-  --accent-glow: rgba(255,107,0,0.15);
-  --text-primary: #FFFFFF;
-  --text-secondary: #A1A1AA;
-  --text-muted: #52525B;
+  --bg-void: #222831;
+  --bg-surface: #393E46;
+  --bg-elevated: #2d3238;
+  --bg-border: #4a5060;
+  --accent: #FFD369;
+  --accent-hover: #ffe08a;
+  --accent-glow: rgba(255,211,105,0.15);
+  --text-primary: #EEEEEE;
+  --text-secondary: #b0b0b0;
+  --text-muted: #666c75;
   --signal-green: #22C55E;
   --font-display: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -38,8 +38,8 @@ a { color: inherit; text-decoration: none; }
 
 .grid-bg {
   background-image:
-    linear-gradient(rgba(255,107,0,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,107,0,0.06) 1px, transparent 1px);
+    linear-gradient(rgba(255,211,105,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,211,105,0.06) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 

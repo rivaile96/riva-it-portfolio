@@ -37,7 +37,7 @@ export default function ExperienceSection() {
               top: 8,
               bottom: 0,
               width: 1,
-              background: 'linear-gradient(to bottom, var(--accent) 0%, rgba(255,107,0,0.1) 100%)',
+              background: 'linear-gradient(to bottom, var(--accent) 0%, rgba(255,211,105,0.1) 100%)',
             }}
           />
 
@@ -60,7 +60,7 @@ export default function ExperienceSection() {
                   borderRadius: '50%',
                   background: idx === 0 ? 'var(--accent)' : 'var(--bg-elevated)',
                   border: `2px solid ${idx === 0 ? 'var(--accent)' : 'var(--bg-border)'}`,
-                  boxShadow: idx === 0 ? '0 0 10px rgba(255,107,0,0.4)' : 'none',
+                  boxShadow: idx === 0 ? '0 0 10px rgba(255,211,105,0.4)' : 'none',
                 }}
               />
 
@@ -73,7 +73,7 @@ export default function ExperienceSection() {
                   padding: '24px 28px',
                   transition: 'border-color 0.15s',
                 }}
-                onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(255,107,0,0.25)')}
+                onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(255,211,105,0.25)')}
                 onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--bg-border)')}
               >
                 {/* Header row */}
@@ -111,8 +111,8 @@ export default function ExperienceSection() {
                   <span
                     style={{
                       padding: '4px 12px',
-                      background: 'rgba(255,107,0,0.08)',
-                      border: '1px solid rgba(255,107,0,0.15)',
+                      background: 'rgba(255,211,105,0.08)',
+                      border: '1px solid rgba(255,211,105,0.15)',
                       borderRadius: 6,
                       fontSize: '0.75rem',
                       color: 'var(--accent)',

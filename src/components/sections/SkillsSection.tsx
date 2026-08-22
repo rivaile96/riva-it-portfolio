@@ -46,8 +46,8 @@ export default function SkillsSection() {
                 transition: 'border-color 0.2s, box-shadow 0.2s',
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.borderColor = 'rgba(255,107,0,0.3)'
-                e.currentTarget.style.boxShadow = '0 0 24px rgba(255,107,0,0.06)'
+                e.currentTarget.style.borderColor = 'rgba(255,211,105,0.3)'
+                e.currentTarget.style.boxShadow = '0 0 24px rgba(255,211,105,0.06)'
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.borderColor = 'var(--bg-border)'
@@ -62,7 +62,7 @@ export default function SkillsSection() {
                     height: 32,
                     borderRadius: 6,
                     background: 'var(--accent-glow)',
-                    border: '1px solid rgba(255,107,0,0.2)',
+                    border: '1px solid rgba(255,211,105,0.2)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',

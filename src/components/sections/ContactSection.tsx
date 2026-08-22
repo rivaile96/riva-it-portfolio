@@ -91,8 +91,8 @@ export default function ContactSection() {
                     textDecoration: 'none',
                   }}
                   onMouseEnter={e => {
-                    e.currentTarget.style.borderColor = 'rgba(255,107,0,0.35)'
-                    e.currentTarget.style.background = 'rgba(255,107,0,0.04)'
+                    e.currentTarget.style.borderColor = 'rgba(255,211,105,0.35)'
+                    e.currentTarget.style.background = 'rgba(255,211,105,0.04)'
                   }}
                   onMouseLeave={e => {
                     e.currentTarget.style.borderColor = 'var(--bg-border)'
@@ -238,7 +238,7 @@ export default function ContactSection() {
               onMouseEnter={e => {
                 if (!sent) {
                   e.currentTarget.style.background = 'var(--accent-hover)'
-                  e.currentTarget.style.boxShadow = '0 0 20px rgba(255,107,0,0.3)'
+                  e.currentTarget.style.boxShadow = '0 0 20px rgba(255,211,105,0.3)'
                 }
               }}
               onMouseLeave={e => {

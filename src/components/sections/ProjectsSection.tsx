@@ -50,8 +50,8 @@ export default function ProjectsSection() {
                 cursor: 'default',
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.borderColor = 'rgba(255,107,0,0.4)'
-                e.currentTarget.style.boxShadow = '0 0 32px rgba(255,107,0,0.1)'
+                e.currentTarget.style.borderColor = 'rgba(255,211,105,0.4)'
+                e.currentTarget.style.boxShadow = '0 0 32px rgba(255,211,105,0.1)'
                 e.currentTarget.style.transform = 'translateY(-2px)'
               }}
               onMouseLeave={e => {
@@ -102,7 +102,7 @@ export default function ProjectsSection() {
               <div
                 style={{
                   padding: '12px 14px',
-                  background: 'rgba(255,107,0,0.06)',
+                  background: 'rgba(255,211,105,0.06)',
                   borderLeft: '2px solid var(--accent)',
                   borderRadius: '0 6px 6px 0',
                 }}

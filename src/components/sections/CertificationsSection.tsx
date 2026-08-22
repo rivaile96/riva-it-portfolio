@@ -56,8 +56,8 @@ export default function CertificationsSection() {
                   transition: 'border-color 0.2s, box-shadow 0.2s',
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.borderColor = 'rgba(255,107,0,0.35)'
-                  e.currentTarget.style.boxShadow = '0 0 24px rgba(255,107,0,0.08)'
+                  e.currentTarget.style.borderColor = 'rgba(255,211,105,0.35)'
+                  e.currentTarget.style.boxShadow = '0 0 24px rgba(255,211,105,0.08)'
                 }}
                 onMouseLeave={e => {
                   e.currentTarget.style.borderColor = 'var(--bg-border)'
@@ -70,7 +70,7 @@ export default function CertificationsSection() {
                     height: 48,
                     borderRadius: 10,
                     background: 'var(--accent-glow)',
-                    border: '1px solid rgba(255,107,0,0.2)',
+                    border: '1px solid rgba(255,211,105,0.2)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -137,7 +137,7 @@ export default function CertificationsSection() {
                   padding: '16px 18px',
                   transition: 'border-color 0.15s',
                 }}
-                onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(255,107,0,0.25)')}
+                onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(255,211,105,0.25)')}
                 onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--bg-border)')}
               >
                 <div

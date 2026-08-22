@@ -33,7 +33,7 @@ export default function HeroSection() {
           transform: 'translateX(-50%)',
           width: 600,
           height: 600,
-          background: 'radial-gradient(circle, rgba(255,107,0,0.08) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(255,211,105,0.08) 0%, transparent 70%)',
           pointerEvents: 'none',
         }}
       />
@@ -199,7 +199,7 @@ export default function HeroSection() {
               }}
               onMouseEnter={e => {
                 e.currentTarget.style.background = 'var(--accent-hover)'
-                e.currentTarget.style.boxShadow = '0 0 20px rgba(255,107,0,0.35)'
+                e.currentTarget.style.boxShadow = '0 0 20px rgba(255,211,105,0.35)'
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.background = 'var(--accent)'
@@ -292,8 +292,8 @@ export default function HeroSection() {
                 key={t}
                 style={{
                   padding: '4px 10px',
-                  background: 'rgba(255,107,0,0.08)',
-                  border: '1px solid rgba(255,107,0,0.15)',
+                  background: 'rgba(255,211,105,0.08)',
+                  border: '1px solid rgba(255,211,105,0.15)',
                   borderRadius: 20,
                   fontSize: '0.72rem',
                   color: 'var(--accent)',

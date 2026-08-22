@@ -99,7 +99,7 @@ export default function AboutSection() {
                   borderRadius: 8,
                   transition: 'border-color 0.15s',
                 }}
-                onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(255,107,0,0.3)')}
+                onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(255,211,105,0.3)')}
                 onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--bg-border)')}
               >
                 <div
