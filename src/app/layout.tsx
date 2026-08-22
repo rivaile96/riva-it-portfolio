@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
-import ParticlesWrapper from '@/components/animations/ParticlesWrapper'
+import WebThreadsWrapper from '@/components/animations/WebThreadsWrapper'
 import './globals.css'
 
 const geistSans = Geist({
@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body>
-        <ParticlesWrapper />
+        <WebThreadsWrapper />
         {children}
       </body>
     </html>
